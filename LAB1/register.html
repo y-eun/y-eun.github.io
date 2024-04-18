@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>김예은</title>
+</head>
+<body>
+    <h2>동아리 가입 양식</h2>
+
+    <form action="/action_page.php">
+        <label for="name">이름</label>
+        <input type="text" id="name" name="name">
+        <br/>
+
+        <label for="major">학부/학과</label>
+        <select id="major" name="major">
+            <option value="컴퓨터과학">컴퓨터과학</option>
+            <option value="데이터사이언스">데이터사이언스</option>
+            <option value="인공지능공학">인공지능공학</option>
+            <option value="기초공학">기초공학</option>
+        </select>
+        <br/>
+
+        <label for="grade">학년</label>
+        <input type="radio" id="1학년" name="grade" value="1학년">
+        <label for="1학년">1학년</label>
+        <input type="radio" id="2학년" name="grade" value="2학년">
+        <label for="2학년">2학년</label>
+        <input type="radio" id="3학년" name="grade" value="3학년">
+        <label for="3학년">3학년</label>
+        <input type="radio" id="4학년" name="grade" value="4학년">
+        <label for="4학년">4학년</label>
+        <br/>
+
+        <label for="snumber">학번</label>
+        <input type="text" id="snumber" name="snumber">
+        <br/>
+
+        <label for="email">이메일</label>
+        <input type="email" id="email" name="email" placeholder="id@sookmyung.ac.kr">
+        <br/>
+
+        <label for="tel">전화번호</label>
+        <input type="tel" id="phone" name="phone" placeholder="010-1234-5678" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}">
+        <br/>
+
+        <label for="moti">가입동기</label>
+        <textarea name="moti" rows="5" cols="30"></textarea>
+        <br/>
+
+        <input type="submit" value="가입하기">
+        <input type="reset" value="취소하기">
+    </form>
+</body>
+</html>

@@ -1,0 +1,135 @@
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box; /*이게 뭘까*/
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-rows: 0.5fr 6fr 0.2fr;
+    gap: 15px 15px;
+}
+
+#top_header {
+    grid-column: 1/4;
+    background-color: navy;
+    color: white;
+}
+header hgroup {
+    margin: 20px;
+}
+#navi {
+    display: flex;
+    justify-content: flex-end;
+}
+#navi li {
+    display: inline-block;
+    margin-right: 20px;
+    text-align: center;
+}
+#navi li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+#navi li ul {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+#navi li ul a {
+    color: navy;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+#navi li:hover ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+a { /*중복*/
+    color: white;
+    font-weight: bolder;
+    text-decoration: none;
+}
+#navi li a:hover {
+    background-color: #fff;
+    color: navy;
+    text-decoration: none; /*밑줄*/
+}
+
+#login {
+    grid-row: 2/3;
+    background-color: navy;
+    color: white;
+    display: flex;
+    justify-content: center;
+}
+#login form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+}
+
+
+#section {
+    grid-row: 2/3;
+    grid-template-rows: auto-fit;
+}
+.card {
+    border-radius: 20px;
+    border: 2px solid black;
+    margin: 5px;
+    padding: 5px;
+    box-shadow: 5px 5px 8px 0px rgba(0,0,0,0.2);
+}
+.card #content {
+    display: flex;
+    align-items: center;
+}
+.card figure {
+    margin-right: 10px; /*이미지 텍스트 간격 조정*/
+}
+.card p {
+    margin: 0;
+    padding: 5px;
+}
+.card h3 {
+    margin: 0;
+    padding: 10px;
+    font-size: 25px;
+}
+#content figure img {
+    width: 150px;
+    height: auto;
+}
+
+#ad {
+    grid-row: 2/3;
+}
+#ad article {
+    border-radius: 20px;
+    border: 1.5px solid navy;
+    background-color: #f8f3d7;
+    margin: 5px;
+    padding: 10px;
+}
+
+
+footer {
+    grid-column: 1/4;
+    background-color: navy;
+}
+#foot ul {
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+}
+#foot ul li {
+    list-style: none;
+}
