@@ -1,0 +1,245 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    gap: 10px 10px;
+}
+
+/*헤더*/
+#top_header {
+    grid-column: 1 / -1;
+    background-color: #333;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+.left-section {
+    display: flex;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 50px;
+    margin-right: 20px;
+    padding-bottom: 12px;
+}
+header h1 a {
+    text-decoration: none;
+    color: white;
+}
+
+#record {
+    list-style: none;
+    display: flex;
+}
+
+#record li {
+    margin-right: 18px;
+}
+
+#record a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+#record a:hover {
+    text-decoration: underline;
+}
+.right-section {
+    display: flex;
+    align-items: center;
+}
+
+#navi {
+    list-style: none;
+    display: flex;
+}
+
+#navi li {
+    margin-left: 15px;
+}
+
+#navi a {
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+#navi a:hover {
+    text-decoration: underline;
+}
+
+.search-box { 
+    height: 30px;
+    width: 300px;
+    background-color: white;
+    border-radius: 40px;
+    padding: 10px;
+}
+.search-txt {
+    border: none;
+    background-color: none;
+    outline: none;
+    float: left;
+    padding: 0px;
+    color: #797979;
+    font-size: 12px;
+    line-height: 12px;
+    width: 200px;
+}
+.search-btn {
+    width: 40px;
+    height: 18px;
+    color: #797979;
+    cursor: pointer;
+    float: right;
+    font-size: 12px;
+    background-color: white;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 8px;
+}
+
+/*section_mainhomepage*/
+section {
+    grid-column: 1/-1;
+    background-color: #e7e5e5;
+}
+#section {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 1rem;
+    padding: 20px;
+}
+.poster {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.poster figure {
+    margin: 0;
+}
+.poster img {
+    width: 100%;
+    height: auto;
+    max-width: 200px;
+    max-height: 300px;
+}
+
+/*section movieinfo*/
+#info {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+#basic {
+    width: 100%;
+    position: relative;
+    margin: 10px;
+}
+#basic img {
+    width: 100%;
+    height: auto;
+    display: block;
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+}
+#overlay-text {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: #333;
+    padding: 10px;
+    font-size: 16px;
+}
+#basic_info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 20px;
+}
+#pos, #character, #score {
+    flex: 1;
+}
+#pos {
+    display: flex;
+    justify-content: flex-start;
+}
+#pos img {
+    width: 300px;
+    height: auto;
+}
+#character {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+    padding: 20px;
+}
+.charac_pic {
+    margin: 0;
+}
+#character img {
+    width: 100px;
+    height: auto;
+}
+.name {
+    color: #333;
+}
+.role {
+    color: #565656;
+    font-size: small;
+}
+#detail {
+    font-size: smaller;
+    color: #565656;
+    text-decoration: none;
+}
+#detail:hover {
+    text-decoration: underline;
+}
+#score {
+    display: flex;
+    justify-content: flex-end;
+    width: 100px;
+    height: auto;
+    background-color: white;
+}
+
+
+/*footer*/
+footer {
+    grid-column: 1 / -1;
+    background-color: #333;
+}
+#foot ul {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+#foot ul li {
+    list-style: none;
+}
+#foot ul li a {
+    text-decoration: none;
+    color: white;
+}
+#foot ul li a:hover {
+    text-decoration: underline;
+}

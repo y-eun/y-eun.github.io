@@ -1,117 +1,132 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-	<meta charset="utf-8">
-	<title>기말 과제</title> 
-	<link rel="stylesheet" href="mystyle.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<title>Final_task</title>
+    <link rel="stylesheet" href="main.css">
 </head>
 <body>
     <div class="container">
-	<header id="top_header">
-        <hgroup id="title">
-            <h1>파묘</h1>
-            <p>Exhuma</p>
-        </hgroup>
-        <nav>
-			<ul id="navi">
-				<li><a href="#">감독/출연</a>
-					<ul>
-					<li><a href="#">장재현</a></li>
-					<li><a href="#">최민식</a></li>
-					<li><a href="#">김고은</a></li>
-					<li><a href="#">유해진</a></li>
-					<li><a href="#">이도현</a></li>
-				  	</ul>
-				</li>
-				<li><a href="#">포스터</a>
-					<ul>
-					<li><a href="#">인터내셔널 포스터</a></li>
-					<li><a href="#">캐릭터 포스터</a></li>
-					<li><a href="#">스페셜 포스터</a></li>
-					<li><a href="#">아트 포스터</a></li>
-				  	</ul>
-				</li>
-				<li><a href="#">관람평</a>
-				</li>
-				<li><a href="#">사운드트랙</a>
-				</li>
-				
-			</ul>
-        </nav>
-    </header>
-		
-		<div id = "section">
-			<section id="post">
-				<article>
-					<div class="card">
-						<img src="poster.jpg">
-					</div> 
-				</article>
-				<article>
-					<div class="card">
-						<header>
-						<h3>등장인물 - 상덕</h3>
-						</header>
-						<div id="content">
-							<figure>
-							<img src="sangduk.jpg">
-							</figure>
-							<p>국내 최고의 지관(地官, 풍수사). 호는 호안(虎眼). 본 작품의 주인공이다. 어지간한 기업 회장도 굽신댈 만큼 높은 입지와 평판을 가진 지관으로, 화림이 가져온 의뢰를 접수한 뒤 묫자리를 살펴보고는 불길함을 느껴 거절하려고 하지만 결국은 맡기로 결정한다.</p>
-						</div>
-					</div> 
-				</article>
-				<article>
-					<div class="card">
-						<header>
-						<h3>등장인물 - 화림</h3>
-						</header>
-						<div id="content">
-							<figure>
-							<img src="hwalim.jpg">
-							</figure>
-							<p>젊은 나이에도 용하다고 소문이 난 무당. 상덕과 함께 본 작품의 주인공 포지션이다. 사건의 발단이 된 의뢰를 처음 받은 인물로, 문제의 원인이 묫바람이라는 것을 간파하고 이장(移葬)을 제안하면서 묘 관련 일에 능한 상덕, 영근과 함께하게 된다. 늘 붙어다니는 봉길과는 사제 지간이지만 나이 차이도 적고 서로를 아끼는 모습이 친남매처럼 가까워 보인다.</p>
-						</div>
-					</div> 
-				</article>
-				<article>
-					<div class="card">
-						<header>
-						<h3>등장인물 - 영근</h3>
-						</header>
-						<div id="content">
-							<figure>
-							<img src="youngguen.jpg">
-							</figure>
-							<p>지관 김상덕과 함께 일하는 장의사. 대한민국 명인 인증을 받았고 방송 출연도 여러 번 해서 세간에 꽤나 알려진 인물로 보인다. 전직 대통령까지 염했던 것을 큰 자부심으로 여긴다. '의열 장의사'란 사무실을 운영하며 김상덕과 꽤나 오랫동안 일을 같이 해 와 막역하다.</p>
-						</div>
-					</div> 
-				</article>
-				<article>
-					<div class="card">
-						<header>
-						<h3>등장인물 - 봉길</h3>
-						</header>
-						<div id="content">
-							<figure>
-							<img src="bonggil.jpg">
-							</figure>
-							<p>무당 이화림과 함께 활동하는 법사. 굿판에서 북을 치는 악사이자 경문을 읊는 법사이면서 귀신을 몸에 받는 신주 노릇도 할 수 있다. 네 주역 중 가장 젊고 경력이 짧다. 화림을 '선생님'이라 부르는 사제 지간으로, 무속인 용어로 신어머니-신아들 관계이지만 나이 차는 그리 크지 않아서 모자라기보단 남매같아 보인다. 사적으로도 같은 헬스장에 다니는 등 가까운 사이인 걸로 보인다.</p>
-						</div>
-					</div> 
-				</article>
-			</section>
-		</div>
+        <header id="top_header">
+            <div class="left-section">
+                <h1>Movie-n</h1>
+				<nav>
+                <ul id="record">
+                    <li><a href="#record">기록</a></li>
+                    <li><a href="#booking">예매</a></li>
+                </ul>
+				</nav>
+            </div>
+			<div class="right-section">
+				<form class="search-box" action="" method="get">
+					<input class="search-txt" type="text" name="" placeholder="검색어를 입력하세요.">
+					<button class="search-btn" type="submit">
+						<i class="fa fa-search"></i>
+					</button>
+				</form>
+				<ul id="navi">
+					<li><a href="#login">로그인</a></li>
+					<li><a href="#signup">회원가입</a></li>
+				</ul>
+			</div>
+        </header>
 
-	<footer>
-		<nav id="foot">
-			<ul>
-				<li><a href="#">2310937</a>
-				<li><a href="#">김예은</a>
-				<li><a href="#">출처 : 네이버/나무위키</a>
-				<li><a href="#">광고주를 모집합니다.</a>
-			</ul>
-		</nav>	
-	</footer>
+		<section>
+			<div id="section">
+				<div class="poster">
+					<figure>
+						<a href="movieinfo.html">
+							<img src="pamyo.jpg" alt="Pamyo Poster">
+						</a>
+					</figure>
+				</div>
+				<div class="poster">
+					<figure>
+						<img src="insideout.jpg" alt="Inside Out Poster">
+					</figure>
+				</div>
+				<div class="poster">
+					<figure>
+						<img src="highjacking.jpg" alt="Hijacking Poster">
+					</figure>
+				</div>
+				<div class="poster">
+					<figure>
+						<img src="escape.jpg" alt="Escape Poster">
+					</figure>
+				</div>
+				<div class="poster">
+					<figure>
+						<img src="handsomeguides.jpg" alt="Handsome Guides Poster">
+					</figure>
+				</div>
+				<div class="poster">
+					<figure>
+						<img src="wonderland.jpg" alt="Wonder Land Poster">
+					</figure>
+				</div>
+				<div class="poster">
+					<figure>
+						<img src="madmax.jpg" alt="Mad Max Poster">
+					</figure>
+				</div>
+				<div class="poster">
+					<figure>
+						<img src="johnofinterest.jpg" alt="John of Interest Poster">
+					</figure>
+				</div>
+				<div class="poster">
+					<figure>
+						<img src="drive.jpg" alt="Drive Poster">
+					</figure>
+				</div>
+				<div class="poster">
+					<figure>
+						<img src="highque.jpg" alt="Haikyuu Poster">
+					</figure>
+				</div>
+				<div class="poster">
+					<figure>
+						<img src="departmentstore.jpg" alt="Department Store Poster">
+					</figure>
+				</div>
+				<div class="poster">
+					<figure>
+						<img src="shedead.jpg" alt="She Dead Poster">
+					</figure>
+				</div>
+				<div class="poster">
+					<figure>
+						<img src="tarot.jpg" alt="Tarot Poster">
+					</figure>
+				</div>
+				<div class="poster">
+					<figure>
+						<img src="cityofcrime.jpg" alt="Crime city Poster">
+					</figure>
+				</div>
+				<div class="poster">
+					<figure>
+						<img src="dune.jpg" alt="Dune Poster">
+					</figure>
+				</div>
+			</div>
+		</section>
+
+
+		<footer>
+			<nav id="foot">
+				<ul>
+					<li><a href="#">2310937_김예은</a>
+					<li><a href="#">서비스 이용약관</a>
+					<li><a href="#">개인정보 처리 방침</a>
+					<li><a href="#">회사 소개</a>
+				</ul>
+			</nav>	
+		</footer>
     </div>
 </body>
 </html>
+
