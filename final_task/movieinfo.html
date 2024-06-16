@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
 	<title>Final_task</title>
     <link rel="stylesheet" href="main.css">
 </head>
@@ -41,7 +44,8 @@
                         <h1>파묘</h1>
                         <p>Exhuma</p>
                         2024 • 미스터리/스릴러 • 한국
-                        2시간 14분 • 15세
+                        2시간 14분 • 15세 • 장재현 감독
+                        <p id="plot">미국 LA, 거액의 의뢰를 받은 무당 ‘화림’(김고은)과 ‘봉길’(이도현)은 기이한 병이 대물림되는 집안의 장손을 만난다. 조상의 묫자리가 화근임을 알아챈 ‘화림’은 이장을 권하고, 돈 냄새를 맡은 최고의 풍수사 ‘상덕’(최민식)과 장의사 ‘영근’(유해진)이 합류한다. “전부 잘 알 거야… 묘 하나 잘못 건들면 어떻게 되는지” 절대 사람이 묻힐 수 없는 악지에 자리한 기이한 묘. ‘상덕’은 불길한 기운을 느끼고 제안을 거절하지만, ‘화림’의 설득으로 결국 파묘가 시작되고… 나와서는 안될 것이 나왔다.</p>
                     </div>
                 </div>
             </div>
@@ -51,38 +55,52 @@
                 </div>
                 <div id="character">
                     <h3>등장인물</h3>
-                    <a href="#" id="detail">더보기</a>
-                    <div class="charac_pic">
-                        <figure>
-                            <img src="minsik.jpg" alt="minsik">
-                            <p class="name">최민식</p>
-                            <p class="role">김상덕 역</p>
-                        </figure>
-                    </div>
-                    <div class="charac_pic">
-                        <figure>
-                            <img src="goeun.jpg" alt="goeun">
-                            <p class="name">김고은</p>
-                            <p class="role">이화림 역</p>
-                        </figure>
-                    </div>
-                    <div class="charac_pic">
-                        <figure>
-                            <img src="haejin.jpg" alt="haejin">
-                            <p class="name">유해진</p>
-                            <p class="role">고영근 역</p>
-                        </figure>
-                    </div>
-                    <div class="charac_pic">
-                        <figure>
-                            <img src="dohyun.jpg" alt="dohyun">
-                            <p class="name">이도현</p>
-                            <p class="role">윤봉길 역</p>
-                        </figure>
+                    <a href="characinfo.html" id="detail">더보기</a>
+                    <div id="charac_pic">
+                        <div class="charac_pic">
+                            <figure>
+                                <img src="minsik.jpg" alt="minsik">
+                                <p class="name">최민식</p>
+                                <p class="role">김상덕 역</p>
+                            </figure>
+                        </div>
+                        <div class="charac_pic">
+                            <figure>
+                                <img src="goeun.jpg" alt="goeun">
+                                    <p class="name">김고은</p>
+                                    <p class="role">이화림 역</p>
+                            </figure>
+                        </div>
+                        <div class="charac_pic">
+                            <figure>
+                                <img src="haejin.jpg" alt="haejin">
+                                <p class="name">유해진</p>
+                                <p class="role">고영근 역</p>
+                            </figure>
+                        </div>
+                        <div class="charac_pic">
+                            <figure>
+                                <img src="dohyun.jpg" alt="dohyun">
+                                <p class="name">이도현</p>
+                                <p class="role">윤봉길 역</p>
+                            </figure>
+                        </div>
                     </div>
                 </div>
                 <div id="score" class="score">
-                
+                    <div id="give_score">
+                        <h3>Movie-n 사용자들의 별점</h3>
+                        <div id="rating" onclick="Rating()">
+                            <p>별점 남기기</p>
+                        </div>
+                    </div>
+                    <div id="star">
+                        <img src="star.jpg" alt="star">
+                        <div id="rating_score">
+                            0.0 / 5.0
+                        </div>
+                    </div>
+
                 </div>
             </div> 
         </section>
@@ -98,5 +116,26 @@
 			</nav>	
 		</footer>
     </div>
+
+    <script>
+        let totalScore = 0;
+        let numberOfRating = 0;
+
+        function Rating() {
+            let score = prompt("별점 (1 ~ 5)");
+            score = parseFloat(score);
+
+            if (isNaN(score) || score < 1 || score > 5) {
+                alert("잘못된 입력입니다. 1에서 5 사이의 숫자를 입력하세요.");
+                return;
+            }
+
+            totalScore += score
+            numberOfRating += 1;
+
+            let averageScore = (totalScore / numberOfRating).toFixed(1);
+            document.getElementById("rating_score").textContent = `${averageScore} / 5.0`;
+        }
+    </script>
 </body>
 </html>

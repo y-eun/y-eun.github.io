@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Noto Sans KR", sans-serif;;
 }
 
 .container {
@@ -85,11 +86,13 @@ header h1 a {
 }
 
 .search-box { 
-    height: 30px;
-    width: 300px;
+    height: 33px;
+    width: 250px;
     background-color: white;
     border-radius: 40px;
-    padding: 10px;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
 }
 .search-txt {
     border: none;
@@ -99,22 +102,19 @@ header h1 a {
     padding: 0px;
     color: #797979;
     font-size: 12px;
-    line-height: 12px;
     width: 200px;
 }
 .search-btn {
     width: 40px;
-    height: 18px;
+    height: 30px;
     color: #797979;
     cursor: pointer;
-    float: right;
     font-size: 12px;
     background-color: white;
     border: none;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-bottom: 8px;
 }
 
 /*section_mainhomepage*/
@@ -168,9 +168,13 @@ section {
     padding: 10px;
     font-size: 16px;
 }
+#plot {
+    font-size: smaller;
+    color: #565656;
+}
 #basic_info {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: flex-start;
     padding: 20px;
 }
@@ -185,18 +189,18 @@ section {
     width: 300px;
     height: auto;
 }
-#character {
+#charac_pic {
     display: grid;
-    justify-content: center;
+    justify-content: space-between;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 1rem;
-    padding: 20px;
+    padding: 10px;
 }
 .charac_pic {
     margin: 0;
 }
 #character img {
-    width: 100px;
+    width: 125px;
     height: auto;
 }
 .name {
@@ -215,11 +219,91 @@ section {
     text-decoration: underline;
 }
 #score {
-    display: flex;
-    justify-content: flex-end;
-    width: 100px;
+    width: 100%;
     height: auto;
-    background-color: white;
+    text-align: left;
+}
+#give_score {
+    margin-bottom: 20px;
+}
+#rating p {
+    cursor: pointer;
+    color: #565656;
+    font-size: smaller;
+}
+#rating p:hover {
+    text-decoration: underline;
+}
+#star {
+    text-align: center;
+    position: relative;
+}
+#star img {
+    width: 300px;
+    height: auto;
+}
+#rating_score {
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #333;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+/*section characinfo*/
+#back {
+    padding: 10px;
+}
+.back-btn {
+    background-color: #e7e5e5;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+}
+#article {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    padding: 30px;
+}
+.card {
+    border-radius: 20px;
+    border: 2px solid black;
+    padding: 10px;
+    box-shadow: 5px 5px 8px 0px rgba(0,0,0,0.2);
+    background-color: #f8f8f8;
+}
+.card #content {
+    display: flex;
+    align-items: center;
+}
+.card figure {
+    margin: 20px; /*이미지 텍스트 간격 조정*/
+}
+.card h3 {
+    margin: 0;
+    padding-top: 10px;
+    padding-left: 10px;
+    font-size: 25px;
+}
+.card p {
+    padding: 10px;
+    margin: 0;
+}
+#content p {
+    padding-right: 25px;
+}
+.card header {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+#content figure img {
+    width: 150px;
+    height: auto;
 }
 
 
@@ -235,6 +319,7 @@ footer {
 }
 #foot ul li {
     list-style: none;
+    font-size: small;
 }
 #foot ul li a {
     text-decoration: none;
