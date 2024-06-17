@@ -306,6 +306,53 @@ section {
     height: auto;
 }
 
+/*section login*/
+#login {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+#loginbox {
+    background-color: #f8f8f8;
+    width: 600px;
+    height: 350px;
+    padding: 20px;
+    margin-bottom: 50px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+#login h1 {
+    padding-top: 40px;
+    margin-bottom: 20px;
+    font-size: 70px;
+    color: #333;
+}
+.loginbox {
+    margin-bottom: 10px;
+}
+.id, .password {
+    width: 500px;
+    height: 40px;
+    font-size: large;
+    padding-left: 10px;
+    border: none;
+    background-color: #e7e5e5;
+}
+#submit {
+    border-radius: 10px;
+    width: 500px;
+    height: 40px;
+    font-size: large;
+    margin-top: 20px;
+    border: none;
+    background-color: #333;
+    color: #e7e5e5;
+}
+
 
 /*footer*/
 footer {
