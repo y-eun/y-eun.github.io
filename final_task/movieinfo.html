@@ -18,7 +18,7 @@
 				<nav>
                 <ul id="record">
                     <li><a href="#record">메이킹/비하인드</a></li>
-                    <li><a href="#booking">해석/감상평</a></li>
+                    <li><a href="review.html">해석/감상</a></li>
                 </ul>
 				</nav>
             </div>
@@ -31,7 +31,7 @@
 				</form>
 				<ul id="navi">
 					<li><a href="login.html">로그인</a></li>
-					<li><a href="#signup">회원가입</a></li>
+					<li><a href="signup.html">회원가입</a></li>
 				</ul>
 			</div>
         </header>
@@ -54,8 +54,11 @@
                     <img src="pamyo.jpg" alt="Pamyo Poster">
                 </div>
                 <div id="character">
-                    <h3>등장인물</h3>
-                    <a href="characinfo.html" id="detail">더보기</a>
+                    <div id="section_title">
+                        <h3>등장인물</h3>
+                        <a href="characinfo.html" id="detail">더보기</a>
+                    </div>
+                    
                     <div id="charac_pic">
                         <div class="charac_pic">
                             <figure>
@@ -90,17 +93,18 @@
                 <div id="score" class="score">
                     <div id="give_score">
                         <h3>Movie-n 사용자들의 별점</h3>
-                        <div id="rating" onclick="Rating()">
-                            <p>별점 남기기</p>
+                        <div id="rating_star">
+                            <div id="rating" onclick="Rating()">
+                                <p>별점 남기기</p>
+                            </div>
+                            <div id="star">
+                                <img src="smallstar.jpg" alt="star">
+                                <div id="rating_score">
+                                    0.0 / 5.0
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div id="star">
-                        <img src="star.jpg" alt="star">
-                        <div id="rating_score">
-                            0.0 / 5.0
-                        </div>
-                    </div>
-
                 </div>
             </div> 
         </section>
