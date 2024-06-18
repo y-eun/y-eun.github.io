@@ -126,6 +126,10 @@
         let numberOfRating = 0;
 
         function Rating() {
+            if (localStorage.getItem('loggedIn') !== 'true') {
+                alert("로그인 후 이용 가능합니다.");
+                return;
+            }
             let score = prompt("별점 (1 ~ 5)");
             score = parseFloat(score);
 
