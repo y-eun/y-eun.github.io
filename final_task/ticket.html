@@ -17,7 +17,7 @@
                 <h1><a href="mainhomepage.html">Movie-n</a></h1>
 				<nav>
                 <ul id="record">
-                    <li><a href="#record">기록</a></li>
+                    <li><a href="record.html">기록</a></li>
                     <li><a href="ticket.html">예매</a></li>
                 </ul>
 				</nav>
@@ -37,9 +37,56 @@
         </header>
 
         <section>
-            <div id="mapbox">
-                <iframe id="map" width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-            </div>
+			<div id="ticket">
+				<div id="maparea">
+					<div id="mapbox">
+						<iframe id="map" width="600" height="450" frameborder="0" scrolling="no" marginheight="20" marginwidth="20"></iframe>
+					</div>
+					<button class="map-btn" type="submit">
+						<a id="maplink" href="" target="_blank">자세한 위치</a>
+					</button>
+					<p>지도 홈페이지</p>
+				</div>
+				<div id="cinemaarea">
+					<h2>예매창 연결</h2>
+					<div id="cinema">
+						<div class="cinema" id="lottecinema">
+							<figure>
+								<a href="https://www.lottecinema.co.kr/NLCHS/ticketing">
+									<img src="lottecinema.jpg" alt="lottecinema">
+								</a>
+							</figure>
+							<p>롯데시네마</p>
+						</div>
+						<div class="cinema" id="megabox">
+							<figure>
+								<a href="https://www.megabox.co.kr/booking">
+									<img src="megabox.jpg" alt="megabox">
+								</a>
+							</figure>
+							<p>메가박스</p>
+						</div>
+						<div class="cinema" id="cgv">
+							<figure>
+								<a href="http://www.cgv.co.kr/ticket/">
+									<img src="cgv.jpg" alt="cgv">
+								</a>
+							</figure>
+							<p>cgv</p>
+						</div>
+						<div class="cinema" id="dtryx">
+							<figure>
+								<a href="https://www.dtryx.com/reserve/movie.do">
+									<img src="dtryx.jpg" alt="dtryx">
+								</a>
+							</figure>
+							<p>디트릭스</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
         </section>
 
         <footer>
@@ -55,8 +102,30 @@
     </div>
 
     <script>
-        let map = document.getElementById("map");
-        map.src = "https://www.openstreetmap.org/export/embed.html?bbox=" 
+		if(navigator.geolocation)
+			navigator.geolocation.getCurrentPosition(success, error);
+		else
+			alert("지원하지 않음");
+
+		function success(position) {
+			let lat = position.coords.latitude;
+			let lon = position.coords.longitude;
+
+			lat = lat.toPrecision(6); 
+			lon = lon.toPrecision(6);
+
+			let map = document.getElementById("map");
+    		map.src = "https://www.openstreetmap.org/export/embed.html?bbox=" + (parseFloat(lon)-0.01) + "%2C" + (parseFloat(lat)-0.01) + "%2C" + (parseFloat(lon)+0.01) + "%2C" + (parseFloat(lat)+0.01) + "&layer=mapnik&marker=" + lat + "%2C" + lon;
+
+			let zoom = 15;
+        	let maplink = document.getElementById("maplink");
+        	maplink.href = "https://www.openstreetmap.org/#map=" + zoom + "/" + lat + "/" + lon;
+		}
+
+		function error() {
+			alert("위치 정보를 가져올 수 없습니다.")
+		}
+        
 		// 원래 navi 저장
 		const originalNaviHTML = document.getElementById('navi').innerHTML;
 

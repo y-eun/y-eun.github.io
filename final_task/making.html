@@ -1,24 +1,25 @@
+<!--내용 소스 출처 : https://www.harpersbazaar.co.kr/article/1861558-->
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
-	<title>2310937_김예은_final_task</title>
+	<title>Final_task</title>
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
     <div class="container">
         <header id="top_header">
             <div class="left-section">
-                <h1>Movie-n</h1>
+                <h1><a href="mainhomepage.html">Movie-n</a></h1>
 				<nav>
                 <ul id="record">
-                    <li><a href="record.html">기록</a></li>
-                    <li><a href="ticket.html">예매</a></li>
+                    <li><a href="making.html">메이킹/비하인드</a></li>
+                    <li><a href="review.html">해석/감상평</a></li>
                 </ul>
 				</nav>
             </div>
@@ -36,90 +37,39 @@
 			</div>
         </header>
 
-		<section>
-			<div id="section">
-				<div class="poster">
-					<figure>
-						<a href="movieinfo.html">
-							<img src="pamyo.jpg" alt="Pamyo Poster">
-						</a>
-					</figure>
+        <section>
+			<div id="slidebox">
+				<div class="imgbtn">
+					<button class="front">
+						<i class="fa fa-caret-left" aria-hidden="true"></i>
+					</button>
 				</div>
-				<div class="poster">
-					<figure>
-						<img src="insideout.jpg" alt="Inside Out Poster">
-					</figure>
+				<div class="slide-container">
+					<div class ="slidearea">
+						  <div class ="slideimg">
+							  <img src ="firescene.jpg" alt="firescene">
+						  </div>
+						  <div class ="slideimg">
+							  <img src ="tastesoil.jpg" alt="tastesoil">
+						  </div>
+						  <div class ="slideimg">
+							  <img src ="rudans.jpg" alt="경문">
+						  </div>
+						<div class="slideimg">
+							<img src="yoonbonggil.jpg" alt="yoonbonggil">
+						</div>
+					</div>
 				</div>
-				<div class="poster">
-					<figure>
-						<img src="highjacking.jpg" alt="Hijacking Poster">
-					</figure>
-				</div>
-				<div class="poster">
-					<figure>
-						<img src="escape.jpg" alt="Escape Poster">
-					</figure>
-				</div>
-				<div class="poster">
-					<figure>
-						<img src="handsomeguides.jpg" alt="Handsome Guides Poster">
-					</figure>
-				</div>
-				<div class="poster">
-					<figure>
-						<img src="wonderland.jpg" alt="Wonder Land Poster">
-					</figure>
-				</div>
-				<div class="poster">
-					<figure>
-						<img src="madmax.jpg" alt="Mad Max Poster">
-					</figure>
-				</div>
-				<div class="poster">
-					<figure>
-						<img src="johnofinterest.jpg" alt="John of Interest Poster">
-					</figure>
-				</div>
-				<div class="poster">
-					<figure>
-						<img src="drive.jpg" alt="Drive Poster">
-					</figure>
-				</div>
-				<div class="poster">
-					<figure>
-						<img src="highque.jpg" alt="Haikyuu Poster">
-					</figure>
-				</div>
-				<div class="poster">
-					<figure>
-						<img src="departmentstore.jpg" alt="Department Store Poster">
-					</figure>
-				</div>
-				<div class="poster">
-					<figure>
-						<img src="shedead.jpg" alt="She Dead Poster">
-					</figure>
-				</div>
-				<div class="poster">
-					<figure>
-						<img src="tarot.jpg" alt="Tarot Poster">
-					</figure>
-				</div>
-				<div class="poster">
-					<figure>
-						<img src="cityofcrime.jpg" alt="Crime city Poster">
-					</figure>
-				</div>
-				<div class="poster">
-					<figure>
-						<img src="dune.jpg" alt="Dune Poster">
-					</figure>
+				<div class="imgbtn">
+					<button class="next">
+						<i class="fa fa-caret-right" aria-hidden="true"></i>
+					</button>
 				</div>
 			</div>
-		</section>
+			
+        </section>
 
-
-		<footer>
+        <footer>
 			<nav id="foot">
 				<ul>
 					<li><a href="#">2310937_김예은</a>
@@ -131,7 +81,24 @@
 		</footer>
     </div>
 
-	<script>
+    <script>
+		let now = 0;
+		const totalSlides = document.querySelectorAll('.slideimg').length;
+
+		$('.next').on('click', function() {
+    		if (now < totalSlides - 1) {
+        		now += 1;
+        		$('.slidearea').css('transform', `translateX(-${now * 100}vw)`);
+    		}
+		});
+
+		$('.front').on('click', function() {
+    		if (now > 0) {
+        		now -= 1;
+        		$('.slidearea').css('transform', `translateX(-${now * 100}vw)`);
+    		}
+		});
+
 		// 원래 navi 저장
 		const originalNaviHTML = document.getElementById('navi').innerHTML;
 
@@ -153,6 +120,6 @@
 			}
 		});
 	</script>
+    
 </body>
 </html>
-

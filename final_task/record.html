@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+	<title>2310937_김예은_final_task</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="container">
+        <header id="top_header">
+            <div class="left-section">
+                <h1><a href="mainhomepage.html">Movie-n</a></h1>
+				<nav>
+                <ul id="record">
+                    <li><a href="record.html">기록</a></li>
+                    <li><a href="ticket.html">예매</a></li>
+                </ul>
+				</nav>
+            </div>
+			<div class="right-section">
+				<form class="search-box" action="" method="get">
+					<input class="search-txt" type="text" name="" placeholder="검색어를 입력하세요.">
+					<button class="search-btn" type="submit">
+						<i class="fa fa-search"></i>
+					</button>
+				</form>
+				<ul id="navi">
+					<li><a href="login.html">로그인</a></li>
+					<li><a href="signup.html">회원가입</a></li>
+				</ul>
+			</div>
+        </header>
+
+        <section>
+            <div id="recordarea">
+                <div id="inputinfo">
+                    <input type="date" id="date-input" name="date-input" placeholder="날짜 선택" min="2000-01-02">
+                    <input type="text" id="movie-name" name="movie-name" placeholder="영화 제목">
+                    <button type="submit" id="record-btn" name="record-btn">기록</button>
+                </div>
+                <div id="calender">
+                    <div class="calender">
+                        <div class="month">
+                            <h1>2024년 6월</h1>
+                        </div>
+                    </div>
+                    <div class="weekdays">
+                        <div>일</div>
+                        <div>월</div>
+                        <div>화</div>
+                        <div>수</div>
+                        <div>목</div>
+                        <div>금</div>
+                        <div>토</div>
+                    </div>
+                    <div class="days">
+                        <div class="blank"></div>
+                        <div class="blank"></div>
+                        <div class="blank"></div>
+                        <div class="blank"></div>
+                        <div class="blank"></div>
+                        <div class="blank"></div>
+                        <div class="day">1</div>
+                        <div class="day">2
+                            <p class="name-record">아가씨</p>
+                        </div>
+                        <div class="day">3</div>
+                        <div class="day">4</div>
+                        <div class="day">5</div>
+                        <div class="day">6</div>
+                        <div class="day">7</div>
+                        <div class="day">8
+                            <p class="name-record">파묘</p>
+                        </div>
+                        <div class="day">9</div>
+                        <div class="day">10</div>
+                        <div class="day">11</div>
+                        <div class="day">12</div>
+                        <div class="day">13</div>
+                        <div class="day">14</div>
+                        <div class="day">15</div>
+                        <div class="day">16</div>
+                        <div class="day">17</div>
+                        <div class="day">18</div>
+                        <div class="day">19</div>
+                        <div class="day">20
+                            <p class="name-record">인사이드 아웃 2</p>
+                        </div>
+                        <div class="day">21</div>
+                        <div class="day">22</div>
+                        <div class="day">23</div>
+                        <div class="day">24
+                            <p class="name-record">하이 재킹</p>
+                        </div>
+                        <div class="day">25</div>
+                        <div class="day">26
+                            <p class="name-record">노트북</p>
+                        </div>
+                        <div class="day">27</div>
+                        <div class="day">28</div>
+                        <div class="day">29</div>
+                        <div class="day">30</div>
+                        <div class="next_month">1</div>
+                        <div class="next_month">2</div>
+                        <div class="next_month">3</div>
+                        <div class="next_month">4</div>
+                        <div class="next_month">5</div>
+                        <div class="next_month">6</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+			<nav id="foot">
+				<ul>
+					<li><a href="#">2310937_김예은</a>
+					<li><a href="#">서비스 이용약관</a>
+					<li><a href="#">개인정보 처리 방침</a>
+					<li><a href="#">회사 소개</a>
+				</ul>
+			</nav>	
+		</footer>
+    </div>
+
+	<script>
+		// 원래 navi 저장
+		const originalNaviHTML = document.getElementById('navi').innerHTML;
+
+		document.addEventListener('DOMContentLoaded', function() {
+			if (localStorage.getItem('loggedIn') === 'true') {
+				const navi = document.getElementById('navi');
+				navi.innerHTML = `
+					<li><a href="mypage.html">마이페이지</a></li>
+            		<li><a href="logout.html" id="logout">로그아웃</a></li>
+        		`;
+
+				document.getElementById('logout').addEventListener('click', function(event) {
+					event.preventDefault();
+					localStorage.removeItem('loggedIn');
+					alert('로그아웃 되었습니다.');
+
+					window.location.href = 'login.html'
+				});
+			}
+		});
+	</script>
+</body>
+</html>

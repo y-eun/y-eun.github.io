@@ -17,7 +17,7 @@
                 <h1><a href="mainhomepage.html">Movie-n</a></h1>
 				<nav>
                 <ul id="record">
-                    <li><a href="#record">메이킹/비하인드</a></li>
+                    <li><a href="making.html">메이킹/비하인드</a></li>
                     <li><a href="review.html">해석/감상</a></li>
                 </ul>
 				</nav>
@@ -154,7 +154,7 @@
 					localStorage.removeItem('loggedIn');
 					alert('로그아웃 되었습니다.');
 
-					navi.innerHTML = originalNaviHTML;
+					window.location.href = 'login.html';
 				});
 			}
 		});
