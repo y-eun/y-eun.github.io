@@ -136,5 +136,28 @@
 			</nav>	
 		</footer>
     </div>
+
+    <script>
+		// 원래 navi 저장
+		const originalNaviHTML = document.getElementById('navi').innerHTML;
+
+		document.addEventListener('DOMContentLoaded', function() {
+			if (localStorage.getItem('loggedIn') === 'true') {
+				const navi = document.getElementById('navi');
+				navi.innerHTML = `
+					<li><a href="mypage.html">마이페이지</a></li>
+            		<li><a href="logout.html" id="logout">로그아웃</a></li>
+        		`;
+
+				document.getElementById('logout').addEventListener('click', function(event) {
+					event.preventDefault();
+					localStorage.removeItem('loggedIn');
+					alert('로그아웃 되었습니다.');
+
+					navi.innerHTML = originalNaviHTML;
+				});
+			}
+		});
+	</script>
 </body>
 </html>

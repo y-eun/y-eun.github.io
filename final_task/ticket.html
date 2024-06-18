@@ -17,8 +17,8 @@
                 <h1><a href="mainhomepage.html">Movie-n</a></h1>
 				<nav>
                 <ul id="record">
-                    <li><a href="#record">메이킹/비하인드</a></li>
-                    <li><a href="review.html">해석/감상</a></li>
+                    <li><a href="#record">기록</a></li>
+                    <li><a href="ticket.html">예매</a></li>
                 </ul>
 				</nav>
             </div>
@@ -37,30 +37,9 @@
         </header>
 
         <section>
-            <div id="container">
-                <div id="writebox">
-                    <select id="category" name="category">
-                        <option disabled hidden selected>
-                            카테고리
-                        </option>
-                        <option value="감상">감상</option>
-                        <option value="해석">해석</option>
-                    </select>
-
-                    <div id="review_area">
-                        <input type="text" id="review_title" name="review_title" placeholder="제목">
-                        <hr>
-                        <textarea id="review_content" name="review_content" placeholder="본문 입력"></textarea>
-                    </div>
-                </div>
-                
-                <div id="review_btn">
-                    <button class="review_btn" id="save_btn" type="submit">임시저장</button>
-                    <button class="review_btn" id="upload_btn" type="submit">업로드</button>
-                </div>
-
+            <div id="mapbox">
+                <iframe id="map" width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
             </div>
-
         </section>
 
         <footer>
@@ -76,6 +55,8 @@
     </div>
 
     <script>
+        let map = document.getElementById("map");
+        map.src = "https://www.openstreetmap.org/export/embed.html?bbox=" 
 		// 원래 navi 저장
 		const originalNaviHTML = document.getElementById('navi').innerHTML;
 
@@ -91,12 +72,12 @@
 					event.preventDefault();
 					localStorage.removeItem('loggedIn');
 					alert('로그아웃 되었습니다.');
-
-					navi.innerHTML = originalNaviHTML;
+                    
+                    window.location.href = 'login.html';
 				});
 			}
 		});
 	</script>
-    
 </body>
 </html>
+

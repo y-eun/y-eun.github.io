@@ -338,6 +338,13 @@ section {
     justify-content: center;
     gap: 10px;
 }
+#login-form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
 #login h1 {
     padding-top: 40px;
     margin-bottom: 20px;
@@ -347,7 +354,7 @@ section {
 .loginbox {
     margin-bottom: 10px;
 }
-.id, .password {
+#id, #password {
     width: 500px;
     height: 40px;
     font-size: large;
@@ -535,6 +542,11 @@ section {
     margin-left: 0.5px;
 }
 
+/*section map*/
+#map {
+    height: 350px;
+    width: 425px;
+}
 
 /*footer*/
 footer {

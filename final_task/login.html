@@ -18,7 +18,7 @@
 				<nav>
                 <ul id="record">
                     <li><a href="#record">기록</a></li>
-                    <li><a href="#booking">예매</a></li>
+                    <li><a href="ticket.html">예매</a></li>
                 </ul>
 				</nav>
             </div>
@@ -40,15 +40,13 @@
             <div id="login">
                 <h1>Movie-n</h1>
                 <div id="loginbox">
-                    <form class="loginbox" action="" method="get">
-                        <input class="id" type="text" name="" placeholder="아이디">
+                    <form id="login-form" class="loginbox" action="" method="get">
+                        <input id="id" type="text" name="id" placeholder="아이디">
+                        <input id="password" type="password" name="password" placeholder="비밀번호">
+                        <button class="loginbox" id="submit" type="submit">
+                            로그인
+                        </button>
                     </form>
-                    <form class="loginbox" action="" method="get">
-                        <input class="password" type="text" name="" placeholder="비밀번호">
-                    </form>
-                    <button class="loginbox" id="submit" type="submit">
-                        로그인
-                    </button>
                     <p>아이디 찾기 | 비밀번호 찾기</p>
                 </div>
             </div>
@@ -65,5 +63,23 @@
 			</nav>	
 		</footer>
     </div>
+    <script>
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+        
+            const userId = document.getElementById('id').value;
+            const password = document.getElementById('password').value;
+        
+            if (userId === '1234' && password === '1234') {
+                // 로그인 성공 시 로컬 스토리지에 로그인 상태 저장
+                localStorage.setItem('loggedIn', 'true');
+        
+                // 모든 페이지의 header 내용을 변경하기 위해 location.href로 리디렉션할 페이지 지정
+                window.location.href = 'mainhomepage.html';
+            } else {
+                alert('아이디 또는 비밀번호가 틀렸습니다.');
+            }
+        });
+        </script>
 </body>
 </html>
