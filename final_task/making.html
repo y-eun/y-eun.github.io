@@ -37,9 +37,10 @@
 			</div>
         </header>
 
-        <section>
+        <section id="making">
+			<p>사진을 클릭하세요</p>
 			<div id="slidebox">
-				<div class="imgbtn">
+				<div class="imgbtn-front">
 					<button class="front">
 						<i class="fa fa-caret-left" aria-hidden="true"></i>
 					</button>
@@ -47,20 +48,20 @@
 				<div class="slide-container">
 					<div class ="slidearea">
 						  <div class ="slideimg">
-							  <img src ="firescene.jpg" alt="firescene">
+							  <img src ="firescene.jpg" alt="firescene" data-info="활활 거세게 타오르는 불길로 등장인물은 물론이고 관객까지 홀리게 한 '파묘'의 장면 중 나오는 도깨비불은 CG가 아닌 실제 연출이다. 크레인 두 대와 각종 와이어 장치를 동원하여 찍은 이 장면에 가장 많은 제작비가 들어갔다.">
 						  </div>
 						  <div class ="slideimg">
-							  <img src ="tastesoil.jpg" alt="tastesoil">
+							  <img src ="tastesoil.jpg" alt="tastesoil" data-info="극 중에서 묘지나 택지를 선정할 때 지질과 길흉을 판단하는 '지관' 상덕이 토양의 느낌을 감별하고 묘터를 정하며 흙을 먹는 장면이 나온다. 상덕이 먹는 흙은 쿠키와 콩가루로 만들어진 식용 흙이다.">
 						  </div>
 						  <div class ="slideimg">
-							  <img src ="rudans.jpg" alt="경문">
+							  <img src ="rudans.jpg" alt="경문" data-info="수많은 관객의 극찬을 자아낸 김고은의 '혼 부르기' 장면에서의 화림이 외는 경문은 무려 3-4장에 달하는 분량으로 알려졌다. '화림'의 역을 맡은 김고은은 자연스러운 연기를 위해 영화에 자문 무속인이 경문을 외는 실제 음성 전체를 녹음하여 노래를 외우듯 경문을 통째로 외웠다.">
 						  </div>
 						<div class="slideimg">
-							<img src="yoonbonggil.jpg" alt="yoonbonggil">
+							<img src="yoonbonggil.jpg" alt="yoonbonggil" data-info="'파묘'에서는 여러 항일 이스터에그가 등장한다. 주요 등장인물인 상덕, 화림, 영근, 봉길은 물론이고 무당 역의 오광심, 어린 무당 박자혜 또한 조선을 대표하는 여성 독립 운동가의 이름이다. 특히, 이도현이 맡은 '봉길'의 성이 '윤'임을 알 수 있는 장면을 통해, 해당 등장인물의 이름이 윤봉길 의사와 이름이 같다는 사실을 알 수 있다. 등장인물의 이름 뿐 아니라, 나라를 지킨다는 뜻 '보국'에서 유래된 '보국사', 보국사를 창건한 스님의 법명 역시 의열단장 김원봉을 연상시키는 '원봉'이다. 유해진이 연기한 장의사 고영근이 일하는 곳의 간판은 '의열 장의사'이며 등장인물의 차 번호판은 광복절을 암시하는 1945/0815와 삼일절을 암시하는 0301이다.">
 						</div>
 					</div>
 				</div>
-				<div class="imgbtn">
+				<div class="imgbtn-next">
 					<button class="next">
 						<i class="fa fa-caret-right" aria-hidden="true"></i>
 					</button>
@@ -68,6 +69,13 @@
 			</div>
 			
         </section>
+
+		<div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p id="modal-text"></p>
+            </div>
+        </div>
 
         <footer>
 			<nav id="foot">
@@ -83,21 +91,26 @@
 
     <script>
 		let now = 0;
-		const totalSlides = document.querySelectorAll('.slideimg').length;
+        const slideArea = document.querySelector('.slidearea');
+        const totalSlides = document.querySelectorAll('.slideimg').length;
 
-		$('.next').on('click', function() {
-    		if (now < totalSlides - 1) {
-        		now += 1;
-        		$('.slidearea').css('transform', `translateX(-${now * 100}vw)`);
-    		}
-		});
+        document.querySelector('.next').addEventListener('click', function() {
+            if (now < totalSlides - 1) {
+                now += 1;
+			}else {
+				now = 0;
+			}
+            slideArea.style.transform = `translateX(-${now * 100}%)`;
+        });
 
-		$('.front').on('click', function() {
-    		if (now > 0) {
-        		now -= 1;
-        		$('.slidearea').css('transform', `translateX(-${now * 100}vw)`);
-    		}
-		});
+        document.querySelector('.front').addEventListener('click', function() {
+            if (now > 0) {
+                now -= 1;
+			}else{
+				now = totalSlides - 1;
+			}
+            slideArea.style.transform = `translateX(-${now * 100}%)`;
+        });
 
 		// 원래 navi 저장
 		const originalNaviHTML = document.getElementById('navi').innerHTML;
@@ -119,6 +132,28 @@
 				});
 			}
 		});
+
+		const modal = document.getElementById('myModal');
+        const modalText = document.getElementById('modal-text');
+        const span = document.querySelector('.close');
+        const images = document.querySelectorAll('.slideimg img');
+
+        images.forEach((img) => {
+            img.addEventListener('click', () => {
+                modal.style.display = 'block';
+                modalText.textContent = img.getAttribute('data-info');
+            });
+        });
+
+        span.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        window.addEventListener('click', (event) => {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        });
 	</script>
     
 </body>
