@@ -66,20 +66,22 @@
     <script>
         document.getElementById('login-form').addEventListener('submit', function(event) {
             event.preventDefault();
-        
+
             const userId = document.getElementById('id').value;
             const password = document.getElementById('password').value;
         
-            if (userId === '1234' && password === '1234') {
-                // 로그인 성공 시 로컬 스토리지에 로그인 상태 저장
+            const storedUserId = localStorage.getItem('userId');
+            const storedPassword = localStorage.getItem('password');
+            const storedUserName = localStorage.getItem('userName');
+            
+            if (userId === storedUserId && password === storedPassword) {
                 localStorage.setItem('loggedIn', 'true');
-        
-                // 모든 페이지의 header 내용을 변경하기 위해 location.href로 리디렉션할 페이지 지정
+                alert(storedUserName + '님, 환영합니다.');
                 window.location.href = 'mainhomepage.html';
             } else {
                 alert('아이디 또는 비밀번호가 틀렸습니다.');
             }
         });
-        </script>
+    </script>
 </body>
 </html>

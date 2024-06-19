@@ -40,24 +40,14 @@
             <div id="signup">
                 <h1>Movie-n</h1>
                 <div id="signupbox">
-                    <form class="signupbox" action="" method="get">
-                        <input class="sign_id" type="text" name="" placeholder="아이디">
+                    <form id="signup-form" class="signupbox" action="" method="get">
+                        <input class="sign_id" type="text" name="id" placeholder="아이디" required>
+                        <input class="sign_password" type="password" name="password" placeholder="비밀번호" required>
+                        <input class="sign_name" type="text" name="name" placeholder="이름">
+                        <input class="sign_birth" type="date" name="birth" placeholder="생년월일" min="1900-01-01">
+                        <input class="sign_tel" type="tel" name="tel" placeholder="전화번호 / 010-0000-0000" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}">
+                        <button class="signupbox" id="submit" type="submit">회원가입</button>
                     </form>
-                    <form class="signupbox" action="" method="get">
-                        <input class="sign_password" type="password" name="" placeholder="비밀번호">
-                    </form>
-                    <form class="signupbox" action="" method="get">
-                        <input class="sign_name" type="text" name="" placeholder="이름">
-                    </form>
-                    <form class="signupbox" action="" method="get">
-                        <input class="sign_birth" type="date" name="" placeholder="생년월일" min="1900-01-01">
-                    </form>
-                    <form class="signupbox" action="" method="get">
-                        <input class="sign_tel" type="tel" name="" placeholder="전화번호 / 010-0000-0000" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}">
-                    </form>
-                    <button class="signupbox" id="submit" type="submit">
-                        회원가입
-                    </button>
                 </div>
             </div>
         </section>
@@ -73,5 +63,24 @@
 			</nav>	
 		</footer>
     </div>
+
+    <script>
+        document.getElementById('signup-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const userId = document.querySelector('.sign_id').value;
+            const password = document.querySelector('.sign_password').value;
+            const userName = document.querySelector('.sign_name').value;
+            
+            // 아이디와 비밀번호를 로컬 스토리지에 저장
+            localStorage.setItem('userId', userId);
+            localStorage.setItem('password', password);
+            localStorage.setItem('userName', userName);
+            
+            alert('회원가입 완료');
+            // 회원가입 완료 후 로그인 페이지로 리디렉션
+            window.location.href = 'login.html';
+        });
+    </script>
 </body>
 </html>
